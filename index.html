@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header { text-align: center; padding: 20px; }
+        .countdown { font-size: 2em; margin-top: 20px; }
+        .venue-info { margin: 20px; }
+        /* Add more styles as needed */
+    </style>
+    <script>
+        function startCountdown() {
+            const eventDate = new Date('2026-04-30T12:00:00'); // Set your wedding date
+            const countdownElement = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                const now = new Date();
+                const timeLeft = eventDate - now;
+                if (timeLeft <= 0) {
+                    countdownElement.innerHTML = 'Wedding Day!';
+                    clearInterval(interval);
+                    return;
+                }
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+        window.onload = startCountdown;
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>You're Invited to the Wedding!</h1>
+    </div>
+    <div class="countdown" id="countdown"></div>
+    <div class="venue-info">
+        <h2>Venue Information</h2>
+        <p>Date: April 30, 2026</p>
+        <p>Venue: The Grand Hall, 123 Wedding St., Celebration City</p>
+        <!-- Add more venue details as needed -->
+    </div>
+</body>
+</html>
