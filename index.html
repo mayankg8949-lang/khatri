@@ -1,48 +1,1118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .header { text-align: center; padding: 20px; }
-        .countdown { font-size: 2em; margin-top: 20px; }
-        .venue-info { margin: 20px; }
-        /* Add more styles as needed */
-    </style>
-    <script>
-        function startCountdown() {
-            const eventDate = new Date('2026-04-30T12:00:00'); // Set your wedding date
-            const countdownElement = document.getElementById('countdown');
-            const interval = setInterval(() => {
-                const now = new Date();
-                const timeLeft = eventDate - now;
-                if (timeLeft <= 0) {
-                    countdownElement.innerHTML = 'Wedding Day!';
-                    clearInterval(interval);
-                    return;
-                }
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }, 1000);
-        }
-        window.onload = startCountdown;
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chanchal ❤️ Puneet | Wedding — 01 May 2026</title>
+<meta name="description" content="Chanchal & Puneet's wedding celebration — 01 May 2026. Jhalawar & Khairthal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════
+   DESIGN: Dark Luxury Editorial
+   Palette: Deep midnight + champagne gold + blush rose
+═══════════════════════════════════════ */
+:root {
+  --midnight: #0d0a0e;
+  --deep: #1a1220;
+  --card: #201828;
+  --gold: #d4a843;
+  --gold-lt: #e8c97a;
+  --gold-pale: #f5e9c8;
+  --rose: #c4768a;
+  --rose-lt: #e8b4c0;
+  --cream: #f0e8d8;
+  --text: #d8cfc0;
+  --text-dim: #8a7e70;
+  --white: #faf8f5;
+  --border: rgba(212,168,67,0.18);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--midnight);
+  color:var(--text);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ── Custom Cursor ── */
+.cursor{
+  position:fixed;width:8px;height:8px;
+  background:var(--gold);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transition:transform .15s ease;
+  mix-blend-mode:difference;
+}
+.cursor-ring{
+  position:fixed;width:36px;height:36px;
+  border:1px solid rgba(212,168,67,.5);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  transition:transform .35s ease,width .3s,height .3s;
+}
+body:hover .cursor{transform:translate(-50%,-50%)}
+body:hover .cursor-ring{transform:translate(-50%,-50%)}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--deep)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ══════════ NAVIGATION ══════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:0 clamp(1.5rem,5vw,4rem);
+  height:70px;display:flex;align-items:center;justify-content:space-between;
+  transition:all .5s ease;
+}
+nav.solid{
+  background:rgba(13,10,14,.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Great Vibes',cursive;
+  font-size:1.8rem;color:var(--gold);
+  letter-spacing:.02em;
+}
+.nav-links{
+  display:flex;gap:2.5rem;list-style:none;
+}
+.nav-links a{
+  font-family:'Jost',sans-serif;font-weight:300;
+  font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-dim);text-decoration:none;
+  transition:color .3s;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-burger{
+  display:none;flex-direction:column;gap:6px;
+  background:none;border:none;cursor:pointer;padding:4px;
+}
+.nav-burger span{
+  display:block;width:26px;height:1px;
+  background:var(--gold);transition:all .3s;
+}
+
+/* Mobile Nav */
+.mobile-nav{
+  display:none;position:fixed;inset:0;
+  background:rgba(13,10,14,.98);z-index:490;
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:2.5rem;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-family:'Italiana',serif;font-size:2.5rem;
+  color:var(--cream);text-decoration:none;
+  transition:color .3s;letter-spacing:.05em;
+}
+.mobile-nav a:hover{color:var(--gold)}
+
+/* ══════════ HERO ══════════ */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  padding:70px 2rem 2rem;
+}
+
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,168,67,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 100%, rgba(196,118,138,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 10% 50%, rgba(212,168,67,.04) 0%, transparent 50%),
+    linear-gradient(170deg, #0f0b10 0%, #1a1220 50%, #0d0a0e 100%);
+}
+
+/* Animated grain overlay */
+.hero-grain{
+  position:absolute;inset:0;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+
+/* Decorative gold lines */
+.hero-line-tl, .hero-line-br{
+  position:absolute;pointer-events:none;opacity:.25;
+}
+.hero-line-tl{top:70px;left:0;width:320px;height:320px}
+.hero-line-br{bottom:0;right:0;width:300px;height:300px}
+
+.hero-content{
+  position:relative;z-index:1;
+  text-align:center;max-width:800px;
+  opacity:0;transform:translateY(32px);
+  animation:riseIn 1.2s cubic-bezier(.22,1,.36,1) .4s forwards;
+}
+@keyframes riseIn{to{opacity:1;transform:none}}
+
+.hero-pre{
+  font-family:'Jost',sans-serif;font-weight:200;
+  font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+}
+.hero-pre::before,.hero-pre::after{
+  content:'';display:block;width:50px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.hero-pre::after{background:linear-gradient(90deg,var(--gold),transparent)}
+
+.hero-names{
+  font-family:'Italiana',serif;
+  font-size:clamp(3.5rem,10vw,8rem);
+  line-height:1;color:var(--white);
+  letter-spacing:-.01em;margin-bottom:.6rem;
+}
+.hero-heart{
+  display:block;
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  color:var(--rose);line-height:1.2;
+  animation:pulse 3s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+
+.hero-tagline{
+  font-family:'Cormorant',serif;font-style:italic;
+  font-size:clamp(1rem,2.5vw,1.4rem);
+  color:var(--text-dim);line-height:1.9;
+  max-width:520px;margin:2rem auto;
+  font-weight:300;
+}
+
+.hero-date-wrap{
+  display:inline-flex;align-items:stretch;
+  border:1px solid var(--border);
+  margin-top:.5rem;position:relative;
+}
+.hero-date-wrap::before{
+  content:'';position:absolute;
+  inset:6px;border:1px solid rgba(212,168,67,.1);
+  pointer-events:none;
+}
+.date-block{
+  padding:1.2rem 2.2rem;display:flex;
+  flex-direction:column;align-items:center;
+  gap:.25rem;
+}
+.date-block+.date-block{
+  border-left:1px solid var(--border);
+}
+.date-label{
+  font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+.date-val{
+  font-family:'Cormorant',serif;
+  font-size:1.5rem;font-weight:600;color:var(--gold-lt);
+}
+
+.hero-scroll{
+  position:absolute;bottom:2.5rem;left:50%;
+  transform:translateX(-50%);
+  display:flex;flex-direction:column;
+  align-items:center;gap:.7rem;
+  opacity:0;animation:riseIn .8s 1.8s forwards;
+}
+.scroll-line{
+  width:1px;height:50px;
+  background:linear-gradient(to bottom,var(--gold),transparent);
+  position:relative;overflow:hidden;
+}
+.scroll-line::after{
+  content:'';position:absolute;
+  top:-100%;left:0;width:100%;height:100%;
+  background:var(--gold-lt);
+  animation:drip 1.6s ease-in-out infinite;
+}
+@keyframes drip{0%{top:-100%}100%{top:200%}}
+.scroll-txt{
+  font-size:.6rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--text-dim);
+}
+
+/* ══════════ COUNTDOWN ══════════ */
+#countdown{
+  padding:5rem clamp(1.5rem,5vw,4rem);
+  background:var(--deep);
+  position:relative;overflow:hidden;
+}
+.count-bg-text{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Italiana',serif;
+  font-size:clamp(5rem,15vw,14rem);
+  color:rgba(212,168,67,.03);
+  white-space:nowrap;pointer-events:none;
+  letter-spacing:.1em;
+}
+.count-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;gap:2.5rem;
+}
+.count-eyebrow{
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);
+}
+.count-grid{
+  display:flex;gap:clamp(1rem,4vw,3rem);
+  align-items:center;flex-wrap:wrap;justify-content:center;
+}
+.count-unit{
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  min-width:90px;
+}
+.count-num{
+  font-family:'Cormorant',serif;
+  font-size:clamp(3rem,8vw,5.5rem);
+  font-weight:600;line-height:1;
+  color:var(--gold-lt);
+  text-shadow:0 0 60px rgba(212,168,67,.3);
+}
+.count-lbl{
+  font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+.count-sep{
+  font-family:'Cormorant',serif;
+  font-size:3.5rem;font-weight:300;
+  color:var(--border);align-self:flex-start;margin-top:1rem;
+}
+
+/* ══════════ COUPLE ══════════ */
+#couple{padding:7rem clamp(1.5rem,5vw,4rem);position:relative;overflow:hidden;}.couple-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:3rem;align-items:center;}.couple-card{display:flex;flex-direction:column;align-items:center;gap:1.5rem;opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}.couple-card.visible{opacity:1;transform:none}.couple-frame{width:clamp(200px,30vw,280px);aspect-ratio:3/4;position:relative;flex-shrink:0;}.couple-frame::before{content:'';position:absolute;inset:-10px;border:1px solid var(--gold);opacity:.3;transition:opacity .4s;}.couple-frame::after{content:'';position:absolute;inset:-20px;border:1px solid var(--gold);opacity:.1;transition:all .4s;}.couple-card:hover .couple-frame::before{opacity:.6;inset:-8px}.couple-card:hover .couple-frame::after{opacity:.25;inset:-16px}.couple-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;transition:transform .6s ease;}.bride-img{background:linear-gradient(145deg,#2a1520,#3d1e2e,#c4768a44,#2a1520);}.groom-img{background:linear-gradient(145deg,#1a1520,#2a2035,#d4a84344,#1a1520);}.couple-card:hover .couple-img{transform:scale(1.04)}.couple-avatar{font-size:clamp(4rem,10vw,7rem);opacity:.5;filter:drop-shadow(0 0 30px rgba(212,168,67,.3));}.couple-name{font-family:'Italiana',serif;font-size:clamp(1.5rem,3.5vw,2.2rem);color:var(--white);letter-spacing:.04em;}.couple-role{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}.couple-center{display:flex;flex-direction:column;align-items:center;gap:1rem;flex-shrink:0;}.couple-amp{font-family:'Great Vibes',cursive;font-size:clamp(3rem,6vw,5rem);color:var(--rose);line-height:1;}.couple-ornament{display:flex;flex-direction:column;align-items:center;gap:.5rem;}.orn-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}.orn-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);}
+/* section headers shared */
+.sec-header{text-align:center;margin-bottom:4.5rem;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}.sec-header.visible{opacity:1;transform:none}.sec-eyebrow{display:block;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}.sec-title{font-family:'Italiana',serif;font-size:clamp(2rem,5vw,3.5rem);color:var(--white);letter-spacing:.03em;line-height:1.2;margin-bottom:1rem;}.sec-divider{display:flex;align-items:center;justify-content:center;gap:.8rem;}.sec-divider::before,.sec-divider::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--border));}.sec-divider::after{background:linear-gradient(to left,transparent,var(--border))}.sec-divider-glyph{color:var(--gold);font-size:.8rem}
+
+/* ══════════ TIMELINE ══════════ */
+#timeline{
+  padding:7rem clamp(1.5rem,5vw,4rem);
+  background:var(--deep);position:relative;
+  overflow:hidden;
+}
+.tl-container{max-width:1000px;margin:0 auto}
+
+.tl-day{margin-bottom:5rem}
+.tl-day:last-child{margin-bottom:0}
+
+.tl-day-header{
+  display:flex;align-items:center;gap:1.5rem;
+  margin-bottom:3rem;padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+  opacity:0;transform:translateX(-30px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.tl-day-header.visible{opacity:1;transform:none}
+
+.tl-day-badge{
+  width:72px;height:72px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold),#a07820);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  box-shadow:0 0 40px rgba(212,168,67,.2);
+}
+.tl-day-badge span:first-child{
+  font-size:.55rem;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);
+}
+.tl-day-badge span:last-child{
+  font-family:'Cormorant',serif;font-size:1.8rem;
+  font-weight:600;color:white;line-height:1;
+}
+
+.tl-day-info h3{
+  font-family:'Italiana',serif;font-size:1.5rem;
+  color:var(--white);margin-bottom:.4rem;
+}
+.tl-day-venue{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.82rem;color:var(--text-dim);
+  font-style:italic;font-family:'Cormorant',serif;
+  font-size:1rem;
+}
+
+/* Vertical timeline line */
+.tl-events{
+  position:relative;padding-left:2.5rem;
+}
+.tl-events::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,var(--gold),rgba(212,168,67,.1));
+}
+
+.tl-event{
+  position:relative;margin-bottom:2rem;
+  padding:1.5rem 1.8rem;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:2px;
+  display:flex;align-items:flex-start;gap:1.5rem;
+  transition:border-color .3s,box-shadow .3s;
+  opacity:0;transform:translateX(20px);
+  transition:opacity .6s ease,transform .6s ease,border-color .3s,box-shadow .3s;
+}
+.tl-event.visible{opacity:1;transform:none}
+.tl-event:hover{
+  border-color:rgba(212,168,67,.4);
+  box-shadow:0 8px 40px rgba(0,0,0,.4),inset 0 0 0 1px rgba(212,168,67,.05);
+}
+
+/* dot on the line */
+.tl-event::before{
+  content:'';position:absolute;
+  left:-2.5rem;top:50%;transform:translate(-50%,-50%);
+  width:9px;height:9px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 3px var(--deep),0 0 0 4px var(--gold);
+}
+
+.tl-event-icon{
+  font-size:1.8rem;flex-shrink:0;
+  width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(212,168,67,.07);border-radius:50%;
+}
+.tl-event-body{flex:1}
+.tl-event-name{
+  font-family:'Cormorant',serif;font-weight:600;
+  font-size:1.15rem;color:var(--white);margin-bottom:.3rem;
+}
+.tl-event-time{
+  font-size:.75rem;letter-spacing:.15em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:.3rem;
+}
+.tl-event-note{
+  font-size:.85rem;color:var(--text-dim);
+  font-family:'Cormorant',serif;font-style:italic;
+}
+.tl-event-badge{
+  align-self:center;
+  background:rgba(196,118,138,.15);
+  border:1px solid rgba(196,118,138,.3);
+  color:var(--rose-lt);
+  font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  padding:.3rem .9rem;border-radius:100px;white-space:nowrap;
+}
+
+/* ══════════ VENUE ══════════ */
+#venue{
+  padding:7rem clamp(1.5rem,5vw,4rem);
+  position:relative;overflow:hidden;
+}
+.venue-grid{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+}
+.venue-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:2.5rem;
+  position:relative;overflow:hidden;
+  transition:border-color .4s;
+  opacity:0;transform:translateY(30px);
+  transition:opacity .7s ease,transform .7s ease,border-color .4s;
+}
+.venue-card.visible{opacity:1;transform:none}
+.venue-card:hover{border-color:rgba(212,168,67,.45)}
+
+.venue-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .4s;
+}
+.venue-card:hover::before{opacity:1}
+
+.venue-number{
+  font-family:'Cormorant',serif;font-size:4rem;
+  font-weight:300;color:rgba(212,168,67,.07);
+  position:absolute;top:.5rem;right:1.5rem;
+  line-height:1;pointer-events:none;
+}
+.venue-city{
+  font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.8rem;
+}
+.venue-name{
+  font-family:'Italiana',serif;font-size:1.6rem;
+  color:var(--white);margin-bottom:1rem;line-height:1.3;
+}
+.venue-address{
+  font-family:'Cormorant',serif;font-style:italic;
+  color:var(--text-dim);font-size:1rem;line-height:1.6;
+  margin-bottom:1.5rem;
+}
+.venue-map{
+  width:100%;height:180px;
+  border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  border-radius:1px;
+}
+.venue-map::after,.venue-map::before{content:none}
+.venue-events-list{
+  margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem;
+}
+.venue-event-pill{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.78rem;color:var(--text-dim);
+}
+.venue-event-pill::before{
+  content:'';width:4px;height:4px;
+  border-radius:50%;background:var(--gold);flex-shrink:0;
+}
+
+/* ══════════ FAMILY ══════════ */
+#family{
+  padding:7rem clamp(1.5rem,5vw,4rem);
+  position:relative;overflow:hidden;text-align:center;
+}
+.family-wrap{
+  max-width:680px;margin:0 auto;
+  opacity:0;transform:translateY(30px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.family-wrap.visible{opacity:1;transform:none}
+
+.family-ornament{
+  font-family:'Great Vibes',cursive;
+  font-size:4rem;color:var(--rose);
+  display:block;margin-bottom:2rem;
+}
+.family-quote{
+  font-family:'Cormorant',serif;font-style:italic;
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  color:var(--text);line-height:2;font-weight:300;
+  margin-bottom:2.5rem;
+}
+.family-sig{
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+}
+.family-sig-line{
+  width:60px;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+}
+.family-sig-name{
+  font-family:'Italiana',serif;font-size:1.3rem;
+  color:var(--gold-lt);letter-spacing:.06em;
+}
+.family-sig-sub{
+  font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+
+/* ══════════ FOOTER ══════════ */
+footer{
+  padding:3rem clamp(1.5rem,5vw,4rem);
+  border-top:1px solid var(--border);
+  background:var(--midnight);
+  display:flex;flex-direction:column;align-items:center;
+  gap:1rem;text-align:center;
+}
+.footer-names{
+  font-family:'Great Vibes',cursive;
+  font-size:2rem;color:var(--gold);
+}
+.footer-date{
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+.footer-copy{
+  font-size:.65rem;color:rgba(138,126,112,.4);
+  letter-spacing:.1em;margin-top:.5rem;
+}
+
+/* ══════════ MUSIC BTN ══════════ */
+.music-fab{
+  position:fixed;bottom:2rem;right:2rem;
+  width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#8a6015);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(212,168,67,.35),0 0 0 1px rgba(212,168,67,.2);
+  z-index:400;transition:transform .3s,box-shadow .3s;
+  font-size:1.15rem;
+  color:white;
+}
+.music-fab:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 32px rgba(212,168,67,.45),0 0 0 2px rgba(212,168,67,.3);
+}
+.music-fab.playing{
+  animation:musicGlow 2s ease-in-out infinite;
+}
+@keyframes musicGlow{
+  0%,100%{box-shadow:0 4px 24px rgba(212,168,67,.35),0 0 0 1px rgba(212,168,67,.2)}
+  50%{box-shadow:0 4px 32px rgba(212,168,67,.6),0 0 0 4px rgba(212,168,67,.15),0 0 50px rgba(212,168,67,.1)}
+}
+
+/* ══════════ SCROLL REVEAL ══════════ */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .75s ease,transform .75s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media(max-width:900px){
+  .couple-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .couple-center{display:none}
+  .venue-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .couple-grid{grid-template-columns:1fr}
+  .count-sep{display:none}
+  .count-grid{gap:.8rem}
+  .count-unit{min-width:70px}
+}
+.couple-frame{
+  width:280px;
+  height:360px;
+  border:1px solid var(--gold);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
+}
+
+.couple-photo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1>You're Invited to the Wedding!</h1>
+
+<!-- ── Custom cursor ── -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══ MOBILE NAV ══ -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#couple" onclick="closeMobileNav()">Couple</a>
+  <a href="#timeline" onclick="closeMobileNav()">Events</a>
+  <a href="#venue" onclick="closeMobileNav()">Venues</a>
+  <a href="#family" onclick="closeMobileNav()">Family</a>
+</nav>
+
+<!-- ══ NAV ══ -->
+<nav id="mainNav">
+  <div class="nav-logo">C &amp; P</div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#couple">Couple</a></li>
+    <li><a href="#timeline">Events</a></li>
+    <li><a href="#venue">Venues</a></li>
+    <li><a href="#family">Family</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+
+  <!-- Top-left corner ornament -->
+  <svg class="hero-line-tl" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0" x2="320" y2="0" stroke="#d4a843" stroke-width=".5"/>
+    <line x1="0" y1="0" x2="0" y2="320" stroke="#d4a843" stroke-width=".5"/>
+    <path d="M60,0 Q0,0 0,60" stroke="#d4a843" stroke-width="1" fill="none"/>
+    <circle cx="0" cy="0" r="4" fill="#d4a843" opacity=".5"/>
+    <circle cx="100" cy="0" r="1.5" fill="#d4a843" opacity=".4"/>
+    <circle cx="0" cy="100" r="1.5" fill="#d4a843" opacity=".4"/>
+    <!-- Mandala fragment -->
+    <path d="M0,0 Q80,30 100,100 Q30,80 0,0" fill="rgba(212,168,67,.04)"/>
+    <circle cx="0" cy="0" r="200" stroke="#d4a843" stroke-width=".4" opacity=".08"/>
+    <circle cx="0" cy="0" r="150" stroke="#d4a843" stroke-width=".3" opacity=".06"/>
+  </svg>
+
+  <svg class="hero-line-br" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="300" y1="300" x2="0" y2="300" stroke="#d4a843" stroke-width=".5"/>
+    <line x1="300" y1="300" x2="300" y2="0" stroke="#d4a843" stroke-width=".5"/>
+    <path d="M240,300 Q300,300 300,240" stroke="#d4a843" stroke-width="1" fill="none"/>
+    <circle cx="300" cy="300" r="4" fill="#d4a843" opacity=".5"/>
+    <circle cx="300" cy="300" r="200" stroke="#d4a843" stroke-width=".4" opacity=".08"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-pre">Wedding Invitation</div>
+    <h1 class="hero-names">Chanchal<span class="hero-heart">❤️</span>Puneet</h1>
+    <p class="hero-tagline">Together with their families, they joyfully invite you<br>to witness and celebrate their sacred union</p>
+    <div class="hero-date-wrap">
+      <div class="date-block">
+        <span class="date-label">Day</span>
+        <span class="date-val">01</span>
+      </div>
+      <div class="date-block">
+        <span class="date-label">Month</span>
+        <span class="date-val">May</span>
+      </div>
+      <div class="date-block">
+        <span class="date-label">Year</span>
+        <span class="date-val">2026</span>
+      </div>
     </div>
-    <div class="countdown" id="countdown"></div>
-    <div class="venue-info">
-        <h2>Venue Information</h2>
-        <p>Date: April 30, 2026</p>
-        <p>Venue: The Grand Hall, 123 Wedding St., Celebration City</p>
-        <!-- Add more venue details as needed -->
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════ COUNTDOWN ══════════ -->
+<section id="countdown">
+  <div class="count-bg-text">2026</div>
+  <div class="count-inner">
+    <span class="count-eyebrow reveal">✦ &nbsp; Counting Down to Forever &nbsp; ✦</span>
+    <div class="count-grid reveal">
+      <div class="count-unit">
+        <div class="count-num" id="cd-d">00</div>
+        <div class="count-lbl">Days</div>
+      </div>
+      <div class="count-sep">:</div>
+      <div class="count-unit">
+        <div class="count-num" id="cd-h">00</div>
+        <div class="count-lbl">Hours</div>
+      </div>
+      <div class="count-sep">:</div>
+      <div class="count-unit">
+        <div class="count-num" id="cd-m">00</div>
+        <div class="count-lbl">Minutes</div>
+      </div>
+      <div class="count-sep">:</div>
+      <div class="count-unit">
+        <div class="count-num" id="cd-s">00</div>
+        <div class="count-lbl">Seconds</div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════ COUPLE ══════════ -->
+<div class="couple-grid">
+
+  <!-- BRIDE -->
+  <div class="couple-card">
+    <div class="couple-frame">
+      <div class="couple-img bride-img">
+        <img src="bride.png.jpeg" alt="Chanchal" class="couple-photo">
+      </div>
+    </div>
+    <div class="couple-name">Chanchal</div>
+    <div class="couple-role">The Bride</div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="couple-center">
+    <div class="couple-ornament"><div class="orn-line"></div></div>
+    <div class="couple-amp">&amp;</div>
+    <div class="couple-ornament"><div class="orn-line"></div><div class="orn-diamond"></div></div>
+  </div>
+
+  <!-- GROOM -->
+  <div class="couple-card">
+    <div class="couple-frame">
+      <div class="couple-img groom-img">
+        <img src="groom.png.jpeg" alt="Puneet" class="couple-photo">
+      </div>
+    </div>
+    <div class="couple-name">Puneet</div>
+    <div class="couple-role">The Groom</div>
+  </div>
+
+</div>
+<!-- ══════════ TIMELINE ══════════ -->
+<section id="timeline">
+  <div class="sec-header reveal">
+    <span class="sec-eyebrow">✦ The Celebrations ✦</span>
+    <h2 class="sec-title">Wedding Events</h2>
+    <div class="sec-divider"><span class="sec-divider-glyph">◆</span></div>
+  </div>
+
+  <div class="tl-container">
+
+    <!-- DAY 1 -->
+    <div class="tl-day">
+      <div class="tl-day-header">
+        <div class="tl-day-badge"><span>Day</span><span>1</span></div>
+        <div class="tl-day-info">
+          <h3>Jhalawar — 01 May 2026</h3>
+          <div class="tl-day-venue">📍 &nbsp;Soni Plaza, Jhalawar</div>
+        </div>
+      </div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <div class="tl-event-icon">🌿</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Mehendi</div>
+            <div class="tl-event-time">⏰ 11:00 AM</div>
+            <div class="tl-event-note">Beautiful henna artistry and celebration</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-event-icon">🎶</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Sangeet</div>
+            <div class="tl-event-time">⏰ 2:00 PM</div>
+            <div class="tl-event-note">Music, dance, and festive celebration</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-event-icon">🪔</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Pallav Ceremony</div>
+            <div class="tl-event-time">⏰ 6:00 PM</div>
+            <div class="tl-event-note">Sacred traditions and blessings</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-event-icon">🍽️</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Dinner</div>
+            <div class="tl-event-time">⏰ Evening</div>
+            <div class="tl-event-note">Venue: Soni Plaza, Jhalawar</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-event-icon">🚌</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Departure to Khairthal</div>
+            <div class="tl-event-time">⏰ 8:00 PM</div>
+            <div class="tl-event-note">Journey continues to the next celebration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="tl-day">
+      <div class="tl-day-header">
+        <div class="tl-day-badge"><span>Day</span><span>2</span></div>
+        <div class="tl-day-info">
+          <h3>Khairthal — 02 May 2026</h3>
+          <div class="tl-day-venue">📍 &nbsp;Greenland Hotel, Khairthal</div>
+        </div>
+      </div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <div class="tl-event-icon">🌼</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Haldi</div>
+            <div class="tl-event-time">⏰ 11:00 AM</div>
+            <div class="tl-event-note">Turmeric blessing ritual — bring warmth and joy</div>
+          </div>
+          <div class="tl-event-badge">Pastel Colours</div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-event-icon">💐</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Reception</div>
+            <div class="tl-event-time">⏰ 6:00 PM</div>
+            <div class="tl-event-note">An elegant evening of celebration and togetherness</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-event-icon">💍</div>
+          <div class="tl-event-body">
+            <div class="tl-event-name">Wedding Vows</div>
+            <div class="tl-event-time">⏰ Midnight</div>
+            <div class="tl-event-note">The sacred union beneath the stars</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tl-container -->
+</section>
+
+<!-- ══════════ VENUE ══════════ -->
+<section id="venue">
+  <div class="sec-header reveal">
+    <span class="sec-eyebrow">✦ Where to Be ✦</span>
+    <h2 class="sec-title">The Venues</h2>
+    <div class="sec-divider"><span class="sec-divider-glyph">◆</span></div>
+  </div>
+  <div class="venue-grid">
+    <div class="venue-card reveal">
+      <div class="venue-number">01</div>
+      <div class="venue-city">Jhalawar, Rajasthan</div>
+      <div class="venue-name">Soni Plaza</div>
+      <div class="venue-address">Jhalrapatan Rd, Near Govt. Satellite Hospital,<br>Madhopur, Jhalawar, Rajasthan 326023</div>
+      <div class="venue-map" style="padding:0;overflow:hidden;">
+        <iframe src="https://www.google.com/maps?q=Hotel+Soni+Plaza,+Jhalrapatan+Rd,+Madhopur,+Jhalawar,+Rajasthan+326023&output=embed" width="100%" height="180" style="border:0;display:block;filter:grayscale(30%) contrast(1.1);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="venue-events-list">
+        <div class="venue-event-pill">Mehendi — 11:00 AM</div>
+        <div class="venue-event-pill">Sangeet — 2:00 PM</div>
+        <div class="venue-event-pill">Pallav — 6:00 PM</div>
+        <div class="venue-event-pill">Dinner &amp; Departure — 8:00 PM</div>
+      </div>
+    </div>
+    <div class="venue-card reveal" style="transition-delay:.15s">
+      <div class="venue-number">02</div>
+      <div class="venue-city">Khairthal, Rajasthan</div>
+      <div class="venue-name">Greenland Hotel</div>
+      <div class="venue-address">Ismailpur Rd, Khairthal,<br>Rajasthan 301404</div>
+      <div class="venue-map" style="padding:0;overflow:hidden;">
+        <iframe src="https://www.google.com/maps?q=Hotel+Greenland,+Ismailpur+Rd,+Khairthal,+Rajasthan+301404&output=embed" width="100%" height="180" style="border:0;display:block;filter:grayscale(30%) contrast(1.1);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="venue-events-list">
+        <div class="venue-event-pill">Haldi — 11:00 AM (Pastel)</div>
+        <div class="venue-event-pill">Reception — 6:00 PM</div>
+        <div class="venue-event-pill">Wedding Vows — Midnight</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAMILY ══════════ -->
+<section id="family">
+  <div class="sec-header reveal">
+    <span class="sec-eyebrow">✦ With Love ✦</span>
+    <h2 class="sec-title">The Family</h2>
+    <div class="sec-divider"><span class="sec-divider-glyph">◆</span></div>
+  </div>
+  <div class="family-wrap reveal">
+    <span class="family-ornament">✿</span>
+    <p class="family-quote">
+      "With hearts full of joy, gratitude, and endless blessings,<br>
+      we open our doors to you. Your presence at this sacred celebration<br>
+      is the greatest gift you can give to Chanchal and Puneet."
+    </p>
+    <div class="family-sig">
+      <div class="family-sig-line"></div>
+      <div class="family-sig-name">The Khatri Family</div>
+      <div class="family-sig-sub">Hosting with Love &amp; Blessings</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-names">Chanchal &amp; Puneet</div>
+  <div class="footer-date">01 May 2026 &nbsp;·&nbsp; Jhalawar &amp; Khairthal</div>
+  <div class="sec-divider" style="width:200px"><span class="sec-divider-glyph" style="color:var(--gold)">◆</span></div>
+  <div class="footer-copy">With love — Khatri Family</div>
+</footer>
+
+<!-- Music FAB -->
+<button class="music-fab" id="musicFab" title="Toggle Music">🎵</button>
+
+<!-- ══════════ JAVASCRIPT ══════════ -->
+<script>
+/* ── Custom cursor ── */
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function animRing(){
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,button,.tl-event,.venue-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    ring.style.width='56px';ring.style.height='56px';
+    ring.style.borderColor='rgba(212,168,67,.6)';
+  });
+  el.addEventListener('mouseleave',()=>{
+    ring.style.width='36px';ring.style.height='36px';
+    ring.style.borderColor='rgba(212,168,67,.5)';
+  });
+});
+
+/* ── Nav scroll ── */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('solid',window.scrollY>40);
+});
+
+/* ── Mobile nav ── */
+function toggleMobileNav(){
+  const mn=document.getElementById('mobileNav');
+  mn.classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+/* ── Countdown ── */
+function tick(){
+  const target=new Date('2026-05-01T00:00:00');
+  const now=new Date();
+  let diff=target-now;
+  if(diff<0)diff=0;
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor(diff%86400000/3600000);
+  const m=Math.floor(diff%3600000/60000);
+  const s=Math.floor(diff%60000/1000);
+  const p=n=>String(n).padStart(2,'0');
+  document.getElementById('cd-d').textContent=p(d);
+  document.getElementById('cd-h').textContent=p(h);
+  document.getElementById('cd-m').textContent=p(m);
+  document.getElementById('cd-s').textContent=p(s);
+}
+tick();setInterval(tick,1000);
+
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // stagger children if needed
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.reveal,.sec-header,.couple-card,.tl-day-header,.tl-event,.venue-card,.family-wrap').forEach((el,i)=>{
+  io.observe(el);
+});
+
+/* Stagger gallery and event cards */
+document.querySelectorAll('.g-item').forEach((el,i)=>{
+  el.style.transitionDelay=`${i*0.08}s`;
+});
+document.querySelectorAll('.tl-event').forEach((el,i)=>{
+  el.style.transitionDelay=`${i*0.1}s`;
+});
+document.querySelectorAll('.couple-card').forEach((el,i)=>{
+  el.style.transitionDelay=`${i*0.2}s`;
+});
+
+/* ── Web Audio Music ── */
+let audioCtx=null,masterGain=null,oscs=[],playing=false;
+
+function buildMusic(){
+  audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  masterGain=audioCtx.createGain();
+  masterGain.gain.setValueAtTime(0,audioCtx.currentTime);
+  masterGain.gain.linearRampToValueAtTime(0.05,audioCtx.currentTime+2);
+  masterGain.connect(audioCtx.destination);
+
+  // Gentle D major chord → A major → G major → D cycling
+  const chords=[
+    [293.66,369.99,440.00,587.33],
+    [220.00,277.18,329.63,440.00],
+    [196.00,246.94,293.66,392.00],
+  ];
+  let ci=0;
+
+  function playChord(freqs){
+    freqs.forEach((f,i)=>{
+      const o=audioCtx.createOscillator();
+      const og=audioCtx.createGain();
+      o.type=i===0?'sine':'triangle';
+      o.frequency.value=f;
+      og.gain.value=i===0?0.4:0.18;
+      // Vibrato
+      const lfo=audioCtx.createOscillator();
+      const lg=audioCtx.createGain();
+      lfo.frequency.value=0.25+i*0.05;
+      lg.gain.value=1.2;
+      lfo.connect(lg);lg.connect(o.frequency);
+      lfo.start();
+      o.connect(og);og.connect(masterGain);
+      o.start();
+      oscs.push(o,lfo);
+    });
+  }
+
+  playChord(chords[0]);
+  // Cycle chord every 6s
+  const chordTimer=setInterval(()=>{
+    if(!playing){clearInterval(chordTimer);return;}
+    ci=(ci+1)%chords.length;
+    // fade old oscs
+    masterGain.gain.linearRampToValueAtTime(0.01,audioCtx.currentTime+.5);
+    setTimeout(()=>{
+      oscs.forEach(o=>{try{o.stop()}catch(e){}});
+      oscs=[];
+      if(!playing)return;
+      masterGain.gain.setValueAtTime(0.01,audioCtx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(0.05,audioCtx.currentTime+1);
+      playChord(chords[ci]);
+    },600);
+  },6000);
+}
+
+function stopMusic(){
+  if(masterGain){
+    masterGain.gain.linearRampToValueAtTime(0,audioCtx.currentTime+1.2);
+    setTimeout(()=>{
+      oscs.forEach(o=>{try{o.stop()}catch(e){}});
+      oscs=[];masterGain=null;
+    },1300);
+  }
+}
+
+const fab=document.getElementById('musicFab');
+fab.addEventListener('click',()=>{
+  if(!playing){
+    buildMusic();
+    fab.textContent='🔊';
+    fab.classList.add('playing');
+    playing=true;
+  }else{
+    stopMusic();
+    fab.textContent='🎵';
+    fab.classList.remove('playing');
+    playing=false;
+  }
+});
+
+/* ── Floating petals ── */
+const petals=['🌸','✿','❀','🌺','🪷'];
+function spawnPetal(){
+  const el=document.createElement('div');
+  const size=.8+Math.random()*.7;
+  el.style.cssText=`
+    position:fixed;
+    left:${Math.random()*100}vw;
+    top:-30px;
+    font-size:${size}rem;
+    opacity:0;
+    pointer-events:none;
+    z-index:1;
+    animation:none;
+  `;
+  el.textContent=petals[Math.floor(Math.random()*petals.length)];
+  document.body.appendChild(el);
+  const dur=5000+Math.random()*6000;
+  const drift=(Math.random()-.5)*200;
+  el.animate([
+    {opacity:0,transform:`translateY(0) translateX(0) rotate(0deg)`},
+    {opacity:.55,transform:`translateY(30vh) translateX(${drift*.3}px) rotate(${Math.random()*180}deg)`,offset:.1},
+    {opacity:.35,transform:`translateY(80vh) translateX(${drift*.7}px) rotate(${Math.random()*360}deg)`,offset:.8},
+    {opacity:0,transform:`translateY(110vh) translateX(${drift}px) rotate(${Math.random()*540}deg)`}
+  ],{duration:dur,easing:'ease-in'});
+  setTimeout(()=>el.remove(),dur+200);
+}
+setInterval(spawnPetal,2800);
+// Initial burst
+[0,600,1200,1800].forEach(d=>setTimeout(spawnPetal,d+500));
+</script>
 </body>
 </html>
